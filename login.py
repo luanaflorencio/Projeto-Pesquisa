@@ -42,8 +42,3 @@ app.login("luanaflorenciopc@gmail.com", "123456")
 br = app.getBrowser()
 
 getLists(br)
-
- def getOrganizedlist()
-
-
-# as informções dos usuários estão na class details no testeList.html 

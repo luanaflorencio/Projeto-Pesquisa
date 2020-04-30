@@ -37,7 +37,7 @@ def getLists(browser: mc.Browser) -> None:
 
 app = App()
 
-app.login("luanaflorenciopc@gmail.com", "123456")
+app.login("", "")
 
 br = app.getBrowser()
 
@@ -56,6 +56,6 @@ officials  = bsObj.find_all('div', {'class' : 'details'})
 for text in officials:
     print(text.get_text())
     aux.write(text.get_text().format())
-
+r
 aux.close()
 file.close()

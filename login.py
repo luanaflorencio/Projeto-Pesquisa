@@ -42,3 +42,20 @@ app.login("luanaflorenciopc@gmail.com", "123456")
 br = app.getBrowser()
 
 getLists(br)
+
+with open("testeLists.html", "r", encoding='utf8') as file:
+    contents = file.read()
+
+
+bsObj = bs4(contents, "lxml")
+
+aux = open("list.txt", "w", encoding='utf8')
+
+officials  = bsObj.find_all('div', {'class' : 'details'})
+
+for text in officials:
+    print(text.get_text())
+    aux.write(text.get_text().format())
+
+aux.close()
+file.close()

@@ -81,7 +81,7 @@ def searchGenders( browser : mc.Browser, gender : str , page = 1) -> None:
             for link in booklinks:
                 linkdata.write( "<a href='"+ str(url) + str( link['href'] ) +"' ></a>\n")
     
-    print("Finalized!")
+    print("Ready!")
 
 
 
@@ -109,18 +109,20 @@ with open("testeLists.html", "r", encoding='utf8') as file:
     officials  = bsObj.find_all('div', {'class' : 'leftContainer'})
 
     for text in officials:
-        print(text.get_text())
         aux.write(text.get_text().format())
+        print("Get List")
 
 with open ("metaData.html", "r", encoding='utf-8') as file:
     contents = file.read()
 
     bsObj = bs4(contents, "lxml")
 
-    aux = open("data.txt", "w", encoding='utf-8')
+    dt = open("data.txt", "w", encoding='utf-8')
 
     # last_links = bs4.find(class_='infoBoxRowItem')
     # last_links.decompose()
+    
+    print("getting data")
 
     data = bsObj.find_all('div',{'class' : 'row'})
     details = bsObj.find_all('div', {'class' : 'infoBoxRowTitle'})
@@ -134,7 +136,8 @@ with open ("metaData.html", "r", encoding='utf-8') as file:
     
 
     for text in arr:
-        print(text.get_text())
+        dt.write(text.get_text().format())
+        print("Finalized!")
 
     aux.close()
     file.close()

@@ -43,15 +43,6 @@ def getData(browser: mc.Browser) -> None:
     with open("metaData.html", "w", encoding='utf-8') as file2:
         file2.write(str(html2))
 
-
- def getData(browser: mc.Browser) -> None:
-
-    res = browser.open("https://www.goodreads.com/book/show/515601.The_C_Programming_Language")
-    aux = res.read()
-    html2 = bs4(aux, 'html.parser')
-    with open("metaData.html", "w", encoding='utf-8') as file2:
-        file2.write(str(html2))
-
 '''
 TODO: refatorar
 '''
